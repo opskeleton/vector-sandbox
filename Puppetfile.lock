@@ -1,16 +1,33 @@
 FORGE
   remote: https://forgeapi.puppetlabs.com
   specs:
+    attachmentgenie-ufw (1.4.9)
+      puppetlabs-stdlib (>= 2.2.1)
     maestrodev-wget (1.6.0)
-    puppetlabs-apt (2.0.0)
-      puppetlabs-stdlib (>= 4.5.0)
+    puppetlabs-apt (1.8.0)
+      puppetlabs-stdlib (>= 2.2.1)
+    puppetlabs-concat (1.2.1)
+      puppetlabs-stdlib (< 5.0.0, >= 3.2.0)
     puppetlabs-stdlib (4.6.0)
+    puppetlabs-vcsrepo (1.2.0)
     willdurand-nodejs (1.8.5)
       maestrodev-wget (>= 1.2.0)
       puppetlabs-stdlib (>= 3.2.1)
 
+GIT
+  remote: git://github.com/jfryman/puppet-nginx.git
+  ref: master
+  sha: 031fb9d8960c9621a9c7fb55b4fd4ff39874cfff
+  specs:
+    jfryman-nginx (0.2.6)
+      puppetlabs-apt (< 2.0.0, >= 1.0.0)
+      puppetlabs-concat (< 2.0.0, >= 1.1.1)
+      puppetlabs-stdlib (< 5.0.0, >= 4.2.0)
+
 DEPENDENCIES
-  puppetlabs-apt (>= 0)
+  attachmentgenie-ufw (>= 0)
+  jfryman-nginx (>= 0)
   puppetlabs-stdlib (>= 0)
+  puppetlabs-vcsrepo (>= 0)
   willdurand-nodejs (>= 0)
 
