@@ -1,3 +1,4 @@
-node 'vector.local' {
-
+node default {
+  include vector
+  include vector::pcp
 }
