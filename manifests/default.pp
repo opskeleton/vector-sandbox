@@ -1,0 +1,3 @@
+node 'vector.local' {
+
+}
