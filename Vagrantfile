@@ -1,5 +1,13 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
+update = <<SCRIPT
+if [ ! -f /tmp/up ]; then
+  sudo aptitude update 
+  sudo aptitude install libaugeas-ruby -y
+  touch /tmp/up
+fi
+SCRIPT
+
 
 Vagrant.configure("2") do |config|
 
@@ -18,6 +26,7 @@ Vagrant.configure("2") do |config|
       vb.customize ['modifyvm', :id, '--memory', 2048, '--cpus', 2]
     end
 
+    node.vm.provision :shell, :inline => update
     node.vm.provision :puppet do |puppet|
       puppet.manifests_path = 'manifests'
       puppet.manifest_file  = 'default.pp'
