@@ -27,7 +27,7 @@ GIT
 GIT
   remote: git://github.com/pulling-strings/puppet-vector.git
   ref: master
-  sha: 5e5271e8d70ae36000e195ced6b3a7e905ab5206
+  sha: fc05c73f54647613bfa6555f59fd4783f69f63bd
   specs:
     strings-vector (0.1.0)
       puppetlabs-stdlib (>= 1.0.0)
