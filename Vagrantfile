@@ -18,13 +18,21 @@ Vagrant.configure("2") do |config|
     env  = ENV['PUPPET_ENV']
     env ||= 'dev'
 
-    node.vm.box = 'ubuntu-14.10_puppet-3.7.3' 
+    node.vm.box = 'ubuntu-15.04_puppet-3.7.5' 
     node.vm.network :public_network, :bridge => bridge
     node.vm.hostname = 'vector.local'
   
     node.vm.provider :virtualbox do |vb|
       vb.customize ['modifyvm', :id, '--memory', 2048, '--cpus', 2]
     end
+
+    node.vm.provider :libvirt do |domain, override|
+	domain.uri = 'qemu+unix:///system'
+	domain.host = "redis.local"
+	domain.memory = 2048
+	domain.cpus = 2
+    end
+
 
     node.vm.provision :shell, :inline => update
     node.vm.provision :puppet do |puppet|
