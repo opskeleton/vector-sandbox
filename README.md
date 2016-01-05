@@ -7,6 +7,8 @@ This project manages a sandbox for [vector](https://github.com/Netflix/vector).
   $ ./boot.sh
 ```
 
+In order to view Vector UI head on to http://{vm-ip}/dist/index.html
+
 # Copyright and license
 
 Copyright [2015] [Ronen Narkis]
